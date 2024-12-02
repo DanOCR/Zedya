@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+}
+@font-face {
+  font-family: 'RetroGraffiti';
+  src: url('../Fonts/Retro.otf') format('truetype');
+}
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #7F2C7F; /* Couleur des boutons */
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transition pour un effet fluide */
+  z-index: 100;
+}
+
+button:hover {
+  background-color: #a052a1; /* Couleur plus claire au survol */
+  transform: scale(1.05); /* Agrandissement léger au survol */
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 30px;
+  background-color: transparent;
+  z-index: 5;
+  text-align: center; /* Centrer le texte */
+  width: 10%;
+}
+
+.logo {
+  font-size: 4.5em;
+  font-family: 'RetroGraffiti', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 
+    2px 2px 0 rgba(255, 105, 180, 0.8), 
+    4px 4px 0 rgba(128, 0, 128, 0.8), 
+    6px 6px 0 rgba(255, 20, 147, 0.8);
+  letter-spacing: 5px;
+  text-align: center; /* S'assurer que le logo est centré */
+}
+
+.menu-icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 2em;
+  margin: 0 20px;
+  color: rgba(255, 20, 147, 0.8);
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition pour couleur et agrandissement */
+}
+
+.instagram:hover {
+  color: #F22683;
+  transform: scale(1.2); /* Agrandissement léger */
+}
+
+.facebook:hover {
+  color: #007BF7;
+  transform: scale(1.2); /* Agrandissement léger */
+}
+.menu-icon:hover {
+  transform: scale(1.2);
+}
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Menu caché par défaut */
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease;
+  z-index: 10;
+}
+
+.side-menu h2 {
+  margin: 20px;
+  text-align: center;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  padding: 15px;
+  text-align: center;
+}
+
+.side-menu ul li a {
+  color: #333; /* Couleur du texte */
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block; /* Pour rendre la zone cliquable */
+  transition: all 0.3s ease; /* Transition pour un effet fluide */
+  letter-spacing: 0; /* Espacement par défaut */
+}
+
+.side-menu ul li a:hover {
+  letter-spacing: 2px; /* Espacement des lettres au survol */
+  transform: scale(1.05); /* Agrandissement léger au survol (si souhaité) */
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+/* Ajouter un effet lorsque le menu est ouvert */
+.side-menu.show {
+  left: 0; /* Montre le menu */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Grise tout le site */
+  z-index: 9; /* Doit être au-dessus du contenu mais en dessous du menu */
+}

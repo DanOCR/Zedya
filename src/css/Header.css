@@ -1,0 +1,91 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  height: 100vh; /* Remplit la hauteur de l'écran */
+  overflow: hidden;
+  z-index: 1; /* Doit être inférieur à l'overlay */
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/Background.jpg'); /* Vérifie que l'image est accessible */
+  background-size: cover;
+  background-position: center;
+  animation: scale 10s infinite alternate;
+  z-index: -1; /* Image en arrière-plan */
+}
+
+@keyframes scale {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.05);
+  }
+}
+
+.header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Moins sombre */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "Rock Salt", cursive;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2em;
+  font-weight: 100;
+  margin: 0; /* Enlève la marge par défaut */
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3em;
+  margin: 10px 0; /* Marges entre les titres */
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #7F2C7F; /* Couleur des boutons */
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Ajoute une légère translation pour décaler vers la gauche */
+.overlay h1,
+.overlay h2,
+.overlay .buttons {
+  transform: translateX(-10px); /* Déplace légèrement vers la gauche */
+}

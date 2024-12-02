@@ -1,0 +1,125 @@
+/* Styles de la Grille des Projets */
+.projets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden; /* Pour que les bords arrondis de l'image ne débordent pas */
+
+  /* Le contenu de la section sera au-dessus de l'image floutée */
+  z-index: 1;
+}
+
+.projets-container::before {
+  /* Pseudo-élément qui va contenir l'image en arrière-plan */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images//Background_projets.jpg"); /* Image d'arrière-plan */
+  background-size: cover;
+  background-position: center;
+  filter: blur(7px); /* Appliquer un flou sur l'image */
+  z-index: -1; /* Placer l'image en arrière-plan */
+}
+
+/* Section des filtres */
+.filters {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.projets-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  height: 80vh;
+  width: 100vh;
+  padding: 20px 0;
+}
+
+.projet-item {
+  width: 90%;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 10px solid black;
+}
+
+.projet-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projet-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.projet-item.disabled {
+  cursor: default; /* Change le curseur pour indiquer que ce projet est non-cliquable */
+}
+
+.projet-item.disabled:hover {
+  transform: none; /* Supprime l'effet de survol pour les projets désactivés */
+  box-shadow: none; /* Enlève l'ombre du projet désactivé */
+}
+
+/* Modale */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 100;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-gallery img {
+  width: 100%; /* Forcer les images à occuper toute la largeur de la cellule */
+  height: 200px; /* Fixer une hauteur uniforme */
+  object-fit: cover; /* Garder les proportions et couvrir la zone */
+  border-radius: 8px;
+}

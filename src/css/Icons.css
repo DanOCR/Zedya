@@ -1,0 +1,22 @@
+.menu-icons {
+    position: fixed;
+    bottom: 20px; /* Espacement par rapport au bas de l'écran */
+    right: 20px;  /* Espacement par rapport à la droite de l'écran */
+    display: flex;
+    align-items: center;
+    z-index: 100; /* S'assurer que les icônes sont visibles au-dessus du contenu */
+  }
+  
+  .instagram:hover {
+    color: #F22683;
+    transform: scale(1.2); /* Agrandissement léger au survol */
+  }
+  
+  .facebook:hover {
+    color: #007BF7;
+    transform: scale(1.2); /* Agrandissement léger au survol */
+  }
+  
+  .menu-icon:hover {
+    transform: scale(1.2);
+  }
